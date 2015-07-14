@@ -1,0 +1,47 @@
+TextField {
+	-fx-font-family:"Source Code Pro";
+}
+
+AstCodeArea {
+	-fx-background-color:#404040;
+}
+
+.caret {
+	-fx-stroke:white;
+}
+
+AstCodeArea * {
+	-fx-cursor: Default;
+	-fx-fill:white;
+	-fx-font-family:"Source Code Pro";
+}
+
+AstCodeArea.editing * {
+	-fx-cursor: Text;
+}
+
+.lineno {
+	-fx-background-color:#404040;
+}
+.lineno .text {
+	-fx-font-style:normal;
+	-fx-fill:gray;
+	-fx-font-family:"Source Code Pro";
+}
+
+.highlighted {
+	-fx-fill:cadetblue !important;
+}
+
+.selected {
+	-fx-font-family:"Source Code Pro Bold";
+	-fx-fill:#C5E689;
+}
+
+.highlight-name {
+	-fx-padding:5 10 5 10;
+}
+
+.highlight-name * {
+	-fx-fill:darkgrey;
+}

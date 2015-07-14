@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.SplitPane?>
+<?import com.github.flqw.ast.explorer.AstCodeArea?>
+<?import com.github.flqw.ast.explorer.AstTreeView?>
+<?import com.github.flqw.ast.explorer.AstNodeTableView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ToggleButton?>
+
+
+<VBox fx:controller="com.github.flqw.ast.explorer.Controller" prefHeight="400.0" prefWidth="800.0" spacing="5" style="-fx-padding:5px" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+	<stylesheets>
+		<URL value="@AstExplorer.css" />
+	</stylesheets>
+   <children>
+      <HBox spacing="5">
+         <children>
+            <TextField fx:id="xPathTextField" HBox.hgrow="ALWAYS" />
+            <Button fx:id="goButton" text="Find XPath"/>
+         </children>
+      </HBox>
+      <HBox>
+      	  <HBox HBox.hgrow="ALWAYS">
+      	  	  <ToggleButton text="Edit Code" fx:id="modeSwitchButton" />
+	          <Label styleClass="highlight-name" fx:id="highlightName" />  	
+      	  </HBox>
+      	  <Label styleClass="highlight-name" fx:id="xPathResultCount" />
+    	  <ComboBox fx:id="languageComboBox" />
+	      <ComboBox fx:id="xPathResultsChoiceBox" />
+      </HBox>
+      <SplitPane fx:id="splitPane" VBox.vgrow="ALWAYS">
+         <items>
+            <AstCodeArea minWidth="50" fx:id="code"/>
+            <AstTreeView minWidth="50" fx:id="tree" />
+            <AstNodeTableView minWidth="50" fx:id="nodeTable" />
+         </items>
+      </SplitPane>
+   </children>
+</VBox>
